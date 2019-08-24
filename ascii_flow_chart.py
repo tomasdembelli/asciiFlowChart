@@ -1,12 +1,14 @@
 class Item():
-    """Provide shared methods."""
+    """Provide shared methods and attributes for creating flowchart items.
+    
+    Define padding and maximum allowed item size."""
     spacingX = 3
     spacingY = 2
     max_X = 150
     max_y = 20
     
     def __init__(self, x=10, y=5, character_X='-', character_Y='|', character_Fill=' ', character_Joint='+', text=''):
-        """Initiate a object.
+        """Initiate an item.
         
         Keyword arquments:
         x -- the length (default 10)
@@ -28,15 +30,15 @@ class Item():
         self.character_Joint = str(character_Joint)[0]
     
     def draw(self):
-        """Join the elements of matrix initiated with the object to draw the item."""
+        """Join the elements of matrix and return a single string."""
         return '\n'.join(map(''.join, self.item_Matrix))
 
 
 class ItemRectangle(Item):
-    """Draw rectangle with optional text in it."""
+    """Create a rectangle object with optional text in it."""
     
     def __init__(self, x=10, y=5, character_X='-', character_Y='|', character_Fill=' ', character_Joint='+', text=''):
-        """Initiate a rectangular object."""
+        """Construct a matrix defining the initiated rectangular item."""
         super().__init__(x, y, character_X, character_Y, character_Fill, character_Joint, text)
         self.item_Matrix = [[self.character_Y if i in [0, self.x-1] else self.character_Fill if j not in [0, self.y-1] else self.character_X for i in range(self.x)] for j in range(self.y)]
         for (q, w) in [(0,0), (0, -1), (-1, 0), (-1, -1)]: self.item_Matrix[q][w] = self.character_Joint
