@@ -1,15 +1,15 @@
-"""This module draws flawcharts with ASCII characters."""
+"""This module draws flowcharts with ASCII characters."""
 
 
 class Item():
-    """Provide shared methods and attributes for creating flowchart 
+    """Provide shared methods and attributes for creating a flowchart 
     items.
     
     Define boundaries which will override user input:
     max_X -- the maximum width of an item (default 150 chars)
     max_Y -- the maximum height of an item (default 20 chars)
-    max_padding_X -- the maximum padding on X axis (default 20 chars)
-    max_padding_Y -- the maximum padding on Y axis (default 4 chars)
+    max_padding_X -- the maximum padding on X-axis (default 20 chars)
+    max_padding_Y -- the maximum padding on Y-axis (default 4 chars)
     """
 
     max_X = 150
