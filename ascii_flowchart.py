@@ -6,13 +6,13 @@ class Item():
     items.
     
     Define boundaries which will override user input:
-    max_X -- the maximum width of an item (default 150 chars)
+    max_x -- the maximum width of an item (default 150 chars)
     max_Y -- the maximum height of an item (default 20 chars)
     max_padding_x -- the maximum padding on X-axis (default 20 chars)
     max_padding_y -- the maximum padding on Y-axis (default 4 chars)
     """
 
-    max_X = 150
+    max_x = 150
     max_y = 20
     max_padding_x = 20
     max_padding_y = 4
@@ -49,7 +49,7 @@ class Item():
         self.min_y = len(self.text) + self.borders + 2*self.padding_y
 
         # Enforce the maximum and minimum boundaries.
-        self.x = min(max(abs(int(x)), self.min_x), Item.max_X)
+        self.x = min(max(abs(int(x)), self.min_x), Item.max_x)
         self.y = min(max(abs(int(y)), self.min_y), Item.max_y)  
 
         # Ensure that only one string character is accepted.
